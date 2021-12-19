@@ -25,3 +25,8 @@
 
 - Embed file bisa kita lakukan ke variable dengan tipe data String
 - Secara otomatis isi file akan dibaca sebagai text dan di masukkan ke variable tersebut
+
+## Embed File ke []byte atau Slice of Byte
+
+- Selain ke tipe data String, embed file juga bisa dilakukan ke variable tipe data []byte
+- Ini cocok sekali jika kita ingin melakukan embed file dalam bentuk binary, seperti gambar dan lain-lain
