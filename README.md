@@ -20,3 +20,8 @@
 - Selanjutnya kita bisa tambahkan komentar `//go:embed` diikuti dengan `nama filenya`, diatas variable yang kita tuju
 - Variable yang dituju tersebut nanti secara otomatis akan berisi konten file yang kita inginkan secara otomatis ketika kode golang di compile
 - Variable yang dituju `tidak bisa` disimpan didalam function (artinya harus diluar package nya)
+
+## Embed File ke String
+
+- Embed file bisa kita lakukan ke variable dengan tipe data String
+- Secara otomatis isi file akan dibaca sebagai text dan di masukkan ke variable tersebut
