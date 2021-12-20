@@ -37,3 +37,9 @@
 - Hal ini juga bisa dilakukan menggunakan embed package
 - Kita bisa menambahkan komentar `//go:embed lebih dari satu baris`
 - Selain itu variable nya bisa kita gunakan tipe data `embed.FS`
+
+## Path Matcher
+
+- Selain manual satu per satu, kita bisa menggunakan path matcher untuk membaca multiple file yang kita inginkan
+- Ini sangat cocok ketika misal kita punya `pola jenis file` yang kita inginkan untuk kita baca
+- Caranya, kita perlu menggunakan path matcher seperti pada package function `path.Match`

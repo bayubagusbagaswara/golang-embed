@@ -52,3 +52,29 @@ func TestMultipleFiles(t *testing.T) {
 	c, _ := files.ReadFile("files/c.txt")
 	fmt.Println(string(c))
 }
+
+// embed file dengan Path Matcher
+
+//go:embed files/*.txt
+var path embed.FS
+
+func TestPathMatcher(t *testing.T) {
+	// kita bisa langsung baca directory
+	// isi dari dirEntries ini adalah []fs.DirEntry
+	dirEntries, _ := path.ReadDir("files")
+
+	// lalu kita interasi
+	for _, entry := range dirEntries {
+		// cek apakah dia directory/folder atau bukan, karena dia tidak tau entry itu apakah folder atau file
+		// jika bukan directory
+		if !entry.IsDir() {
+			// ambil name nya, hasilnya adalah nama file (bukan directory)
+			fmt.Println(entry.Name())
+			// lalu baca isi filenya, tapi masukkan path directorynya
+			file, _ := path.ReadFile("files/" + entry.Name())
+			// cetak isi file ke string
+			fmt.Println(string(file))
+		}
+	}
+
+}
